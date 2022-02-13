@@ -1,22 +1,21 @@
+import { between, down, only, up } from '../../utils/breakpoints';
 import Theme, { screenSizes } from '../typings/theme';
 
-// import { between, down, only, up } from '../breakpoints';
-
 export const lightTheme: Theme = {
-  //   breakpoints: {
-  //     values: {
-  //       mobile: 580,
-  //       tablet: 960,
-  //       laptop: 1260,
-  //       desktop: 1320,
-  //       largeScreen: 1920
-  //     },
-  //     keys: screenSizes,
-  //     up: up,
-  //     down: down,
-  //     between: between,
-  //     only: only
-  //   },
+  breakpoints: {
+    values: {
+      mobile: 580,
+      tablet: 960,
+      laptop: 1260,
+      desktop: 1320,
+      largeScreen: 1920
+    },
+    keys: screenSizes,
+    up: up,
+    down: down,
+    between: between,
+    only: only
+  },
   palette: {
     strongRed: '#F8232D',
     strongBlue: '#0A77ED',

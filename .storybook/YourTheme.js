@@ -1,5 +1,6 @@
 import { create } from '@storybook/theming';
-import stellarLogo from '../docs/stellar-logo.png';
+import stellarLogo from './public/images/stellar-logo.png';
+
 
 export default create({
   base: 'light',

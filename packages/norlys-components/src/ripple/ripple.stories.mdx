@@ -27,82 +27,74 @@ These values can come from different Mouse events, like `onMouseDown`, `onClick`
 ## Props: Color, Opacity and Duration
 
 <Canvas>
-  <Story name="strongRed-1.0">
-    <ThemeProvider theme={lightTheme}>
-      <Container
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          position: 'relative',
-          height: '50px',
-          width: '200px',
-          border: '1px solid grey',
-          cursor: 'pointer'
-        }}
-      >
-        <Ripple color={'#F8232D'} opacity={1} />
-        strongRed - 1
-      </Container>
-    </ThemeProvider>
-  </Story>
-  <Story name="strongRed-0.2">
-    <ThemeProvider theme={lightTheme}>
-      <Container
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          position: 'relative',
-          height: '50px',
-          width: '200px',
-          border: '1px solid grey',
-          cursor: 'pointer'
-        }}
-      >
-        <Ripple color={'#F8232D'} opacity={0.2} />
-        strongRed - 0.2
-      </Container>
-    </ThemeProvider>
-  </Story>
-  <Story name="grey100-1.0">
-    <ThemeProvider theme={lightTheme}>
-      <Container
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          position: 'relative',
-          height: '50px',
-          width: '200px',
-          border: '1px solid grey',
-          cursor: 'pointer',
-          backgroundColor: '#000000',
-          color: '#ffffff'
-        }}
-      >
-        <Ripple color={'#323232'} opacity={1.0} />
-        grey100 - 1.0
-      </Container>
-    </ThemeProvider>
-  </Story>
-  <Story name="duration4000">
-    <ThemeProvider theme={lightTheme}>
-      <Container
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          position: 'relative',
-          height: '50px',
-          width: '200px',
-          border: '1px solid grey',
-          cursor: 'pointer'
-        }}
-      >
-        <Ripple color={'#F8232D'} opacity={1.0} duration={4000} />
-        Duration: 4000ms
-      </Container>
-    </ThemeProvider>
-  </Story>
+  <ThemeProvider theme={lightTheme}>
+    <Container
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        position: 'relative',
+        height: '50px',
+        width: '200px',
+        border: '1px solid grey',
+        cursor: 'pointer'
+      }}
+    >
+      <Ripple color={'#F8232D'} opacity={1} />
+      strongRed - 1
+    </Container>
+  </ThemeProvider>
+  <ThemeProvider theme={lightTheme}>
+    <Container
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        position: 'relative',
+        height: '50px',
+        width: '200px',
+        border: '1px solid grey',
+        cursor: 'pointer'
+      }}
+    >
+      <Ripple color={'#F8232D'} opacity={0.2} />
+      strongRed - 0.2
+    </Container>
+  </ThemeProvider>
+  <ThemeProvider theme={lightTheme}>
+    <Container
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        position: 'relative',
+        height: '50px',
+        width: '200px',
+        border: '1px solid grey',
+        cursor: 'pointer',
+        backgroundColor: '#000000',
+        color: '#ffffff'
+      }}
+    >
+      <Ripple color={'#323232'} opacity={1.0} />
+      grey100 - 1.0
+    </Container>
+  </ThemeProvider>
+  <ThemeProvider theme={lightTheme}>
+    <Container
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        position: 'relative',
+        height: '50px',
+        width: '200px',
+        border: '1px solid grey',
+        cursor: 'pointer'
+      }}
+    >
+      <Ripple color={'#F8232D'} opacity={1.0} duration={4000} />
+      Duration: 4000ms
+    </Container>
+  </ThemeProvider>
 </Canvas>

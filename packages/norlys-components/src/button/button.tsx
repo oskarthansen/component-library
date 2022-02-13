@@ -15,11 +15,8 @@ import { lightTheme } from '../themes';
 import getThemeColorOrString from '../utils/get-theme-color-or-string';
 import { baseStyles, BUTTON_HOVER_SCALE } from './button.styles';
 
-// TODO: Implement light and dark themes
 type Globals = 'inherit' | 'initial' | 'revert' | 'unset';
 
-// const variant = ['light', 'dark'] as const;
-// type Variant = typeof variant[number];
 // eslint-disable-next-line @typescript-eslint/ban-types
 type Color = Globals | Palette | (string & {});
 
@@ -57,7 +54,7 @@ export const convertHexToRGBA = (hexCode: string, opacity: number): string => {
   return `rgba(${r},${g},${b},${opacity / 100})`;
 };
 
-// Lightbutton theme is the default
+// lightButtonTheme is the default
 export const lightButtonTheme = {
   backgroundColor: {
     default: 'subtleDarkGreen',
@@ -89,6 +86,8 @@ const rippleStyles = css`
 interface ButtonRootProps {
   styles?: string;
   disabled: boolean;
+
+  $loading: boolean;
   $backgroundColor: {
     default: Color;
     disabled: Color;
@@ -138,7 +137,7 @@ const ButtonInnerContent = styled.span<ButtonInnerContentProps>`
 
   ${({ styles }) => styles};
 `;
-// Todo: Should not forward props. variant, loading
+
 export interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   loading?: boolean;
   theme?: Theme;
@@ -209,7 +208,7 @@ const Button = React.forwardRef<HTMLButtonElement, Props>(function Button(
       styles={styles?.root}
       type={type}
       onMouseDown={handleMouseDown}
-      loading={loading}
+      $loading={loading}
       $backgroundColor={backgroundColor}
       {...rest}
     >
@@ -230,15 +229,3 @@ const Button = React.forwardRef<HTMLButtonElement, Props>(function Button(
 });
 
 export default Button;
-
-// TODO: Should we specify proptypes or disable warning?
-// TODO: Alternative: https://www.npmjs.com/package/babel-plugin-typescript-to-proptypes
-// Button.propTypes = {
-//   children: PropTypes.node,
-//   loading: PropTypes.bool,
-//   type: PropTypes.oneOf(['button', 'submit', 'reset']),
-//   component: PropTypes.oneOf<React.ElementType>([]),
-//   disabled: PropTypes.bool,
-//   styles: PropTypes.object,
-//   theme: PropTypes.object
-// };

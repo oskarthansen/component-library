@@ -33,6 +33,7 @@ const Typo = styled.p`
   margin: 5px;
 `;
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const Colors = () => {
   const { palette: colors } = lightTheme;
 

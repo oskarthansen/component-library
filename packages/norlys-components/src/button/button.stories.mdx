@@ -4,12 +4,14 @@ import { ThemeProvider } from 'styled-components';
 import styled from 'styled-components';
 import lightTheme from '../themes/light-theme';
 import extendingSCExample from '../../../../docs/images/button/extending-sc-example.png';
+import themeProp from '../../../../docs/images/button/theme-prop.png';
+import stylesProp from '../../../../docs/images/button/styles-prop.png';
 
 export const BlueButton = styled(Button)`
-background-color: blue;
-&:before {
   background-color: blue;
-}
+  &:before {
+    background-color: blue;
+  }
 `;
 
 <Meta title="norlys-components/Button" component={Button} />
@@ -24,91 +26,89 @@ Import as `import Button from '@norlys/norlys-components/button'` or
 ### Light background
 
 <Canvas>
-  <Story name="Usage">
-    <ThemeProvider theme={lightTheme}>
-      <p>Default</p>
-      <Button>Default</Button>
-      <p>Loading</p>
-      <Button loading={true}>Loading</Button>
-      <p>Disabled</p>
-      <Button disabled>Disabled</Button>
-    </ThemeProvider>
-  </Story>
+  <ThemeProvider theme={lightTheme}>
+    <p>Default</p>
+    <Button>Default</Button>
+    <p>Loading</p>
+    <Button loading={true}>Loading</Button>
+    <p>Disabled</p>
+    <Button disabled>Disabled</Button>
+  </ThemeProvider>
 </Canvas>
 
 ### Dark background
 
+
 <Canvas style={{ background: '#323232', color: 'white' }}>
-  <Story name="another">
-    <ThemeProvider theme={lightTheme}>
-      <p>Default</p>
-      <Button
-        theme={{
-          backgroundColor: {
-            default: '#755FFA'
-          }
-        }}
-      >
-        Default
-      </Button>
-      <p>Loading</p>
-      <Button
-        theme={{
-          backgroundColor: {
-            default: '#755FFA'
-          },
-          loadingSpinnerColor: {
-            default: 'white'
-          }
-        }}
-        loading={true}
-      >
-        Loading
-      </Button>
-      <p>Disabled</p>
-      <Button
-        theme={{
-          backgroundColor: {
-            default: '#25D287',
-            disabled: 'red'
-          }
-        }}
-        disabled={true}
-      >
-        Default
-      </Button>
-    </ThemeProvider>
-  </Story>
+  <ThemeProvider theme={lightTheme}>
+    <p>Default</p>
+    <Button
+      theme={{
+        backgroundColor: {
+          default: '#755FFA'
+        }
+      }}
+    >
+      Default
+    </Button>
+    <p>Loading</p>
+    <Button
+      theme={{
+        backgroundColor: {
+          default: '#755FFA'
+        },
+        loadingSpinnerColor: {
+          default: 'white'
+        }
+      }}
+      loading={true}
+    >
+      Loading
+    </Button>
+    <p>Disabled</p>
+    <Button
+      theme={{
+        backgroundColor: {
+          default: '#755FFA',
+          disabled: '#755FFA'
+        }
+      }}
+      disabled={true}
+    >
+      Default
+    </Button>
+  </ThemeProvider>
 </Canvas>
 
 ## Button customization
 
+The button can be customized in multiple ways, depending on what you wish to do. The button has some
+build-in functionality which can't and shouldn't be changed. The only thing that should be changed
+is the colorscheme of the button. The easiest way to modify the colorscheme is through the <strong>Theme prop</strong>.
+
 ### Styles prop
+
 Should be used when...
+<img height="350px" src={stylesProp} alt="Styled Components extending button styles" />
 
 ### Theme prop
+
 Should be used when...
+<img height="350px" src={themeProp} alt="Styled Components extending button styles" />
 
 ### Extending through styled components
+
 Should be used when...
 
-##### Background color example:
-<img src={extendingSCExample} alt="Styled Components extending button styles" />
+<img height="350px" src={extendingSCExample} alt="Styled Components extending button styles" />
 
 <Canvas>
-  <Story name="Blue Button Example">
-    <ThemeProvider theme={lightTheme}>
-      <BlueButton>Blue Button</BlueButton>
-    </ThemeProvider>
-  </Story>
+  <ThemeProvider theme={lightTheme}>
+    <BlueButton>Blue Button</BlueButton>
+  </ThemeProvider>
 </Canvas>
-
-
-
-
-
 
 # Usage
 
-The button component is as minimal as possible. The purpose of this component is to extend it, for
-example with styled components.
+The button component is as minimal as possible. The button has some build-in functionality which
+can't be changed, but the colorpalette/colors of the button can.

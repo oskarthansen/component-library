@@ -1,14 +1,11 @@
 import { css } from 'styled-components';
-// TODO: Lineheight should be fixed
-
-// Primary button styles
 
 const PRIMARY_BORDER_RADIUS = `22px`;
 export const BUTTON_HOVER_SCALE = 'scaleX(1.025) scaleY(1.05)';
 
 interface BaseStylesProps {
   disabled: boolean;
-  loading?: boolean;
+  $loading: boolean;
 }
 
 export const baseStyles = css<BaseStylesProps>`
@@ -30,22 +27,21 @@ export const baseStyles = css<BaseStylesProps>`
   line-height: 18px;
   text-transform: uppercase; // Maybe this should be removed?
   font-size: 14px;
-  /* min-width: 160px; // Is this correct? */
   padding: 12px 40px;
   z-index: 1;
   transition: box-shadow 0.1s ease-in;
   box-shadow: ${({ disabled }) => !disabled && '0px 8px 24px rgba(0, 0, 0, 0.16)'};
 
-  ${({ loading, disabled }) =>
-    (loading || disabled) &&
+  ${({ $loading, disabled }) =>
+    ($loading || disabled) &&
     css`
       cursor: default;
       pointer-events: none;
     `};
 
-  ${({ loading, disabled }) =>
+  ${({ $loading, disabled }) =>
     !disabled &&
-    !loading &&
+    !$loading &&
     css`
       &:before {
         content: '';
@@ -57,7 +53,6 @@ export const baseStyles = css<BaseStylesProps>`
         height: 100%;
         z-index: -1;
         border-radius: ${PRIMARY_BORDER_RADIUS};
-        /* transition: all 0.08s ease-in; */
         transition: all 150ms cubic-bezier(0, 0, 0.2, 1) 0ms;
       }
 

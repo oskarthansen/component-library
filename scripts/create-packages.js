@@ -102,6 +102,4 @@ async function createPackages() {
   }
 }
 
-// createPackages();
-
 module.exports = createPackages;
