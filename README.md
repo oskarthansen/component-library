@@ -11,6 +11,3 @@ For at køre Storybook og se dokumentation:
 
 <code>npm run storybook</code>
 
-
-# Til billeder af source code: 
-https://carbon.now.sh/
