@@ -17,5 +17,5 @@
     "noImplicitAny": true,
     "jsx": "react"
   },
-  "include": ["packages", "utils"]
+  "include": ["packages", "utils", "docs/components"]
 }

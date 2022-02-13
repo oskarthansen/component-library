@@ -3,8 +3,7 @@ import stellarLogo from '../docs/stellar-logo.png';
 
 export default create({
   base: 'light',
-  brandTitle: 'Norlys / Stellar',
-  brandUrl: 'https://norlys.dk/',
+  brandTitle: 'Stellar',
   brandImage: stellarLogo,
   appBg: 'white',
   barBg: 'white',

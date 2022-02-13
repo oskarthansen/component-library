@@ -1,7 +1,7 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import stellar from './stellar.jpeg';
 import { Source } from '@storybook/addon-docs';
 import dedent from 'ts-dedent';
+import stellarArchitecture from './images/stellar-architecture.png';
 
 <Meta
   title="Intro"
@@ -14,21 +14,48 @@ import dedent from 'ts-dedent';
   }}
 />
 
-<img src={stellar} alt="Stellar image" />
-
 #
 
 # Introduktion
 
-Tekst her Tekst her Tekst her Tekst her Tekst her Tekst her Tekst her Tekst her Tekst her Tekst her
-Tekst her Tekst her Tekst her Tekst her Tekst her Tekst her Tekst her Tekst her
+...
+
+Biblioteket er optimeret til at gøre det så nemt for bundlers som muligt, at anvende tree shaking.
+Ligeledes er biblioteket optimeret til at gøre det nemt for en udvikler at udvikle og udgive nye
+komponenter.
 
 ## Install
 
-Komponentbiblioteket er skrevet i React. For at bruge komponentbiblioteket skal du installere en af
-pakkerne; <strong>base-components</strong>, <strong>styled-components</strong>, osv..
+Komponentbiblioteket er skrevet i React. Biblioteket består af flere pakker, hvor "grundpakkerne"
+er:
+
+<ul>
+  <li>Hooks</li>
+  <li>Base components</li>
+  <li>Utils</li>
+</ul>
+
+Disse pakker kan installeres og bruges uafhængigt af hinanden. Hvis man i et projekt eksempelvis kun
+har brug for utils, så kan man nøjes med at installere pakken "utils". Det samme princip gælder for
+resten af pakkerne.
+
+<img src={stellarArchitecture} alt="Styled Components extending button styles" />
+
+<p></p>
+<p></p>
+<p></p>
 
 #### base-components
+
+Base-components består af basale funktionelle komponenter, der ikke er stylet (med CSS eller lign.).
+Formålet med denne pakke er at udstille komponenter og funktionalitet, der "normalvis" ikke
+eksisterer i HTML, men som er brugbart på tværs af forskellige applikationer (uafhængig af styling).
+Et eksempel er en Accordion. Der er ikke et HTML tag, der hedder en "Accordion", som blot har
+funktionaliteten som en "Accordion" (og som ikke er stylet). Modsat en "Button". Her findes der i
+HTML et "Button" tag, hvor en Button har forskellige events og attributter. Base-components
+udstiller da ikke-stylede komponenter, med "udvidet" funktionalitet. Stylingen af de forskellige
+komponenter er op til klienten, der bruger denne pakke.
+
 <Source
   language="bash"
   code={dedent`
@@ -36,34 +63,52 @@ pakkerne; <strong>base-components</strong>, <strong>styled-components</strong>, 
   `}
 />
 
-#### styled-components
+#### utils
+
+Utils udstiller hjælpefunktioner, der er nyttige på tværs af projekter.
+
 <Source
   language="bash"
   code={dedent`
-  npm install --save @norlys/styled-components
+  npm install --save @norlys/utils
   `}
 />
 
-#### themes
+#### hooks
+
+Hooks pakken udstiller React Hooks, der er nyttige på tværs af projekter. En hook, der er brugbar på
+tværs af applikationer er eksempelvis: "use-local-storage" eller "use-form". Formålet med pakken er
+at udstille "hjælpe-hooks".
+
 <Source
   language="bash"
   code={dedent`
-  npm install --save @norlys/themes
+  npm install --save @norlys/hooks
   `}
 />
 
-osv...
+### Specialiserede pakker (styling-specifik)
 
+Til sidst er der de specialicerede pakker, som har "base-components" som afhængighed. Formålet med
+denne pakke er at udstille brand-specifikke komponenter. Dvs. stylede komponenter. Derved skal de
+funktionelle komponenter fra "base-components" styles.
+
+<Source
+  language="bash"
+  code={dedent`
+  npm install --save @norlys/norlys-components
+  `}
+/>
 
 ### Use
 
-Import components you want into your UI
+Komponenter kan importeres på to måder:
 
-<code>{`import { Button, Typography } from '@norlys/styled-components';`}</code>
+<code>{`import { Button } from '@norlys/norlys-components';`}</code>
 
-or
+eller
 
-<code>{`import Button from '@norlys/styled-components/button';`}</code>
+<code>{`import Button from '@norlys/norlys-components/button';`}</code>
 
 ## Hvordan dokumentationen skal læses
 
@@ -71,10 +116,8 @@ Vi dokumenterer ved at...
 
 ## Guidelines
 
-Vi dokumentere på denne måde...
-
 Vi dokumenterer ved at...
 
-Vi dokumentere på denne måde...
+Vi dokumenterer på denne måde...
 
 ## Link til Norlys styleguide
