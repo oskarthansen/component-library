@@ -1,0 +1,9 @@
+{
+  "packages": ["packages/*"],
+  "version": "independent",
+  "stream": true,
+  "bootstrap": {
+    "npmClientArgs": ["--no-package-lock", "--production", "--no-optional"]
+  },
+  "npmClientArgs": ["--no-package-lock", "--production", "--no-optional"]
+}

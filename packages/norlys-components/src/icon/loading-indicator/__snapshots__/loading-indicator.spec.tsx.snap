@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LoadingIndicator /> snapshot should match the snapshot 1`] = `
+.c0 {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+  font-size: 24px;
+  color: #FFFFFF;
+}
+
+.c1 {
+  -webkit-animation: eoUyJr 0.8s linear infinite;
+  animation: eoUyJr 0.8s linear infinite;
+}
+
+.c1 ellipse {
+  fill: white;
+}
+
+<div>
+  <svg
+    class="c0 c1"
+    color="white"
+    viewBox="0 0 20 20"
+  >
+    <ellipse
+      cx="18.0002"
+      cy="9.99587"
+      opacity="0.7"
+      rx="1.99977"
+      ry="1.99976"
+    />
+    <ellipse
+      cx="2.00024"
+      cy="9.99587"
+      opacity="0.3"
+      rx="1.99977"
+      ry="1.99976"
+    />
+    <ellipse
+      cx="16.0002"
+      cy="15.9959"
+      opacity="0.05"
+      rx="1.99977"
+      ry="1.99976"
+    />
+    <ellipse
+      cx="4.00415"
+      cy="15.9959"
+      opacity="0.2"
+      rx="1.99977"
+      ry="1.99976"
+    />
+    <ellipse
+      cx="16.0002"
+      cy="3.99977"
+      opacity="0.6"
+      rx="1.99977"
+      ry="1.99976"
+    />
+    <ellipse
+      cx="4.00415"
+      cy="3.99977"
+      opacity="0.4"
+      rx="1.99977"
+      ry="1.99976"
+    />
+    <ellipse
+      cx="10.0042"
+      cy="17.9998"
+      opacity="0.1"
+      rx="1.99977"
+      ry="1.99976"
+    />
+    <ellipse
+      cx="10.0042"
+      cy="1.99977"
+      opacity="0.5"
+      rx="1.99977"
+      ry="1.99976"
+    />
+  </svg>
+</div>
+`;

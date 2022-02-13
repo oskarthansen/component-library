@@ -1,0 +1,80 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import stellar from './stellar.jpeg';
+import { Source } from '@storybook/addon-docs';
+import dedent from 'ts-dedent';
+
+<Meta
+  title="Intro"
+  parameters={{
+    previewTabs: {
+      'storybook/docs/panel': {
+        hidden: true
+      }
+    }
+  }}
+/>
+
+<img src={stellar} alt="Stellar image" />
+
+#
+
+# Introduktion
+
+Tekst her Tekst her Tekst her Tekst her Tekst her Tekst her Tekst her Tekst her Tekst her Tekst her
+Tekst her Tekst her Tekst her Tekst her Tekst her Tekst her Tekst her Tekst her
+
+## Install
+
+Komponentbiblioteket er skrevet i React. For at bruge komponentbiblioteket skal du installere en af
+pakkerne; <strong>base-components</strong>, <strong>styled-components</strong>, osv..
+
+#### base-components
+<Source
+  language="bash"
+  code={dedent`
+  npm install --save @norlys/base-components
+  `}
+/>
+
+#### styled-components
+<Source
+  language="bash"
+  code={dedent`
+  npm install --save @norlys/styled-components
+  `}
+/>
+
+#### themes
+<Source
+  language="bash"
+  code={dedent`
+  npm install --save @norlys/themes
+  `}
+/>
+
+osv...
+
+
+### Use
+
+Import components you want into your UI
+
+<code>{`import { Button, Typography } from '@norlys/styled-components';`}</code>
+
+or
+
+<code>{`import Button from '@norlys/styled-components/button';`}</code>
+
+## Hvordan dokumentationen skal læses
+
+Vi dokumenterer ved at...
+
+## Guidelines
+
+Vi dokumentere på denne måde...
+
+Vi dokumenterer ved at...
+
+Vi dokumentere på denne måde...
+
+## Link til Norlys styleguide

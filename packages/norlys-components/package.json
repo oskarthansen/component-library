@@ -1,0 +1,35 @@
+{
+  "name": "@norlys/norlys-components",
+  "version": "1.0.0",
+  "description": "Now I’m the model of a modern major general / The venerated Virginian veteran whose men are all / Lining up, to put me up on a pedestal / Writin’ letters to relatives / Embellishin’ my elegance and eloquence / But the elephant is in the room / The truth is in ya face when ya hear the British cannons go / BOOM",
+  "keywords": [],
+  "author": "Oskar <oskhan@norlys.dk>",
+  "license": "ISC",
+  "publishConfig": {
+    "access": "public",
+    "directory": "build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://Norlys@dev.azure.com/Norlys/Stellar/_git/Stellar"
+  },
+  "scripts": {
+    "build": "node ../../scripts/build",
+    "prepublishOnly": "npm run build",
+    "prepare": "npm run build"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.15.4",
+    "@norlys/base-components": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/styled-components": "^5.1.14",
+    "jest-styled-components": "^7.0.5",
+    "react": "^17.0.2",
+    "styled-components": "^5.3.1"
+  },
+  "peerDependencies": {
+    "react": "17.x",
+    "styled-components": "5.x"
+  }
+}

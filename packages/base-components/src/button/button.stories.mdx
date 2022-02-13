@@ -1,0 +1,23 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
+import Button from './button';
+
+<Meta title="Base-components/Button" component={Button} />
+
+# Button
+
+Import as `import Button from '@norlys/base-components/button'` or
+`import { Button } from '@norlys/base-components/button'`
+
+<Canvas>
+  <Story name="Usage">
+    <Button>Button</Button>
+  </Story>
+</Canvas>
+
+# Usage
+
+The button component is as minimal as possible. The purpose of this component is to extend it, for
+example with styled components.
+
+<ArgsTable story="Usage" />
+<ArgsTable of={Button} />

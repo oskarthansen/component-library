@@ -1,0 +1,114 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
+import Button from './button';
+import { ThemeProvider } from 'styled-components';
+import styled from 'styled-components';
+import lightTheme from '../themes/light-theme';
+import extendingSCExample from '../../../../docs/images/button/extending-sc-example.png';
+
+export const BlueButton = styled(Button)`
+background-color: blue;
+&:before {
+  background-color: blue;
+}
+`;
+
+<Meta title="norlys-components/Button" component={Button} />
+
+# Button
+
+Import as `import Button from '@norlys/norlys-components/button'` or
+`import { Button } from '@norlys/norlys-components/button'`
+
+## States
+
+### Light background
+
+<Canvas>
+  <Story name="Usage">
+    <ThemeProvider theme={lightTheme}>
+      <p>Default</p>
+      <Button>Default</Button>
+      <p>Loading</p>
+      <Button loading={true}>Loading</Button>
+      <p>Disabled</p>
+      <Button disabled>Disabled</Button>
+    </ThemeProvider>
+  </Story>
+</Canvas>
+
+### Dark background
+
+<Canvas style={{ background: '#323232', color: 'white' }}>
+  <Story name="another">
+    <ThemeProvider theme={lightTheme}>
+      <p>Default</p>
+      <Button
+        theme={{
+          backgroundColor: {
+            default: '#755FFA'
+          }
+        }}
+      >
+        Default
+      </Button>
+      <p>Loading</p>
+      <Button
+        theme={{
+          backgroundColor: {
+            default: '#755FFA'
+          },
+          loadingSpinnerColor: {
+            default: 'white'
+          }
+        }}
+        loading={true}
+      >
+        Loading
+      </Button>
+      <p>Disabled</p>
+      <Button
+        theme={{
+          backgroundColor: {
+            default: '#25D287',
+            disabled: 'red'
+          }
+        }}
+        disabled={true}
+      >
+        Default
+      </Button>
+    </ThemeProvider>
+  </Story>
+</Canvas>
+
+## Button customization
+
+### Styles prop
+Should be used when...
+
+### Theme prop
+Should be used when...
+
+### Extending through styled components
+Should be used when...
+
+##### Background color example:
+<img src={extendingSCExample} alt="Styled Components extending button styles" />
+
+<Canvas>
+  <Story name="Blue Button Example">
+    <ThemeProvider theme={lightTheme}>
+      <BlueButton>Blue Button</BlueButton>
+    </ThemeProvider>
+  </Story>
+</Canvas>
+
+
+
+
+
+
+# Usage
+
+The button component is as minimal as possible. The purpose of this component is to extend it, for
+example with styled components.
